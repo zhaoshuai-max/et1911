@@ -1,29 +1,21 @@
 package com.etoak.bean;
 
+import java.util.List;
+import java.util.Map;
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data
+@NoArgsConstructor //无参构造
+@AllArgsConstructor //顺序
 public class Student {
 	private Integer id;
 	private String name;
 	private Integer ageInteger;
-	public Integer getId() {
-		return id;
-	}
-	public void setId(Integer id) {
-		this.id = id;
-	}
-	public String getName() {
-		return name;
-	}
-	public void setName(String name) {
-		this.name = name;
-	}
-	public Integer getAgeInteger() {
-		return ageInteger;
-	}
-	public void setAgeInteger(Integer ageInteger) {
-		this.ageInteger = ageInteger;
-	}
-	@Override
-	public String toString() {
-		return "Student [id=" + id + ", name=" + name + ", ageInteger=" + ageInteger + "]";
-	}
+	private List<String> hobbyList;
+	
+	private Map<String, Object> stuMap;
+	
 }

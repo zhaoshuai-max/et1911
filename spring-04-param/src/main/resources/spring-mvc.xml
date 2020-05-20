@@ -12,14 +12,15 @@
 	
 	<context:component-scan base-package="com.etoak">
 		<context:include-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
+		<context:include-filter type="annotation" expression="org.springframework.web.bind.annotation.RestController"/>
 	</context:component-scan>
 	
 	<mvc:annotation-driven></mvc:annotation-driven>
 	<!--将静态资源(css,js)交给servlet容器内置的default  -->
 	<mvc:default-servlet-handler/>
 	<!-- 定制到classpath下 优先级大mapping="/static"直接覆盖webapp下的static  定制大的范围往下写-->
-	<!-- <mvc:resources location="classpath:/static/" mapping="/static/**"/> -->
-	<mvc:resources location="file:d:/赵帅/" mapping="/pic/**"/>
+	<mvc:resources location="classpath:/static/" mapping="/s/**"/> 
+	<!-- <mvc:resources location="file:d:/赵帅/" mapping="/pic/**"/> -->
 	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 		<property name="prefix" value="/pages/"/>
 		<property name="suffix" value=".jsp"/>
